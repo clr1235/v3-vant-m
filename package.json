@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "preinstall": "npx only-allow pnpm",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "prepare": "husky install"
   },
   "dependencies": {
     "vue": "^3.4.21"
@@ -21,10 +22,16 @@
     "@types/node": "^20.11.30",
     "@vitejs/plugin-vue": "^5.0.4",
     "eslint": "^8.57.0",
+    "husky": "^8.0.3",
     "typescript": "^5.2.2",
     "vite": "^5.2.0",
     "vue-tsc": "^2.0.6"
   },
+  "husky": {
+    "hooks": {
+        "commit-msg": "commitlint -e $HUSKY_GIT_PARAMS"
+    }
+},
   "engines": {
     "node": ">=16.14.0"
   }
