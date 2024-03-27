@@ -1,7 +1,8 @@
 // eslint.config.mjs
 import antfu from '@antfu/eslint-config'
 
-export default antfu({
+
+const data = antfu({
     // enable UnoCSS support
     // https://unocss.dev/integrations/vscode
     unocss: true,
@@ -9,3 +10,6 @@ export default antfu({
         '.github',
     ],
 })
+console.log(data, 'data=s=s=s=s=')
+
+export default data
