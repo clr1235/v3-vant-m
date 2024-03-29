@@ -25,7 +25,7 @@ export default defineConfig({
                 autoprefixer(),
                 viewport({
                     appSelector: '#app',
-                    viewportWidth: 375,
+                    viewportWidth: file => file.includes('vant') ? 375 : 750,
                     maxDisplayWidth: 600,
                 }),
             ],
