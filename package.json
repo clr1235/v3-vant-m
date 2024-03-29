@@ -11,8 +11,8 @@
         "preview": "vite preview",
         "preinstall": "npx only-allow pnpm",
         "prepare": "husky install",
-        "lint": "eslint . --cache",
-        "lint:fix": "eslint . --fix"
+        "lint": "eslint",
+        "lint:fix": "eslint --fix"
     },
     "dependencies": {
         "@unocss/preset-rem-to-px": "^0.58.7",
