@@ -4,7 +4,6 @@ import { createApp } from 'vue';
 import App from './App.vue';
 
 import 'virtual:uno.css';
-import './style.css';
 
 /* --------------------------------
 Vant 中有个别组件是以函数的形式提供的，
