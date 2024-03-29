@@ -15,6 +15,8 @@
     "dependencies": {
         "@unocss/preset-rem-to-px": "^0.58.7",
         "nprogress": "^0.2.0",
+        "pinia": "^2.1.7",
+        "pinia-plugin-persistedstate": "^3.2.1",
         "vant": "^4.8.7",
         "vue": "^3.4.21",
         "vue-router": "4"

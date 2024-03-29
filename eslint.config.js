@@ -30,5 +30,6 @@ export default antfu({
         'style/semi': 0,
         'style/comma-dangle': 0, // 关闭语句末尾必须加逗号
         'import/order': 0, // 关闭导入排序
+        'no-console': 1
     },
 })
