@@ -15,7 +15,8 @@
     "dependencies": {
         "@unocss/preset-rem-to-px": "^0.58.7",
         "vant": "^4.8.7",
-        "vue": "^3.4.21"
+        "vue": "^3.4.21",
+        "vue-router": "4"
     },
     "devDependencies": {
         "@antfu/eslint-config": "^2.11.3",

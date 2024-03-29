@@ -26,5 +26,6 @@ export default antfu({
     rules: {
         'style/semi': 0,
         'comma-dangle': 0,
+        'import/order': 0, // 关闭导入排序
     },
 })

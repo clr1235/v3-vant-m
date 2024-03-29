@@ -8,5 +8,6 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     VanButton: typeof import('vant/es')['Button']
+    VanConfigProvider: typeof import('vant/es')['ConfigProvider']
   }
 }

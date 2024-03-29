@@ -3,9 +3,11 @@
 </script>
 
 <template>
-    <div>
-        <van-button type="primary" size="small">按钮</van-button>
-    </div>
+    <VanConfigProvider>
+        <router-view>
+            <transition />
+        </router-view>
+    </VanConfigProvider>
 </template>
 
 <style scoped></style>
