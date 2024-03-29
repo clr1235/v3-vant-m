@@ -3,8 +3,11 @@ import { createApp } from 'vue';
 
 import router from '@/router';
 import pinia from '@/stores';
-import 'virtual:uno.css';
+
 import App from './App.vue';
+
+import '@/styles/app.less';
+import 'virtual:uno.css';
 
 /* --------------------------------
 Vant 中有个别组件是以函数的形式提供的，
