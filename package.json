@@ -11,7 +11,7 @@
         "preview": "vite preview",
         "preinstall": "npx only-allow pnpm",
         "prepare": "husky install",
-        "lint": "eslint .",
+        "lint": "eslint . --cache",
         "lint:fix": "eslint . --fix"
     },
     "dependencies": {
