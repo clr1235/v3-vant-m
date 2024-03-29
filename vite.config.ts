@@ -7,8 +7,11 @@ import viewport from 'postcss-mobile-forever';
 import UnoCSS from 'unocss/vite';
 import AutoImport from 'unplugin-auto-import/vite';
 import Components from 'unplugin-vue-components/vite';
+import { VueRouterAutoImports } from 'unplugin-vue-router';
+import VueRouter from 'unplugin-vue-router/vite';
 import type { ConfigEnv, UserConfig } from 'vite';
 import { loadEnv } from 'vite';
+import Layouts from 'vite-plugin-vue-layouts';
 
 export default ({ mode }: ConfigEnv): UserConfig => {
     const root = process.cwd()
@@ -17,9 +20,25 @@ export default ({ mode }: ConfigEnv): UserConfig => {
     return {
         base: env.VITE_APP_PUBLIC_PATH,
         plugins: [
+            // 此项必须放在vue()之前   https://github.com/posva/unplugin-vue-router
+            VueRouter({
+                extensions: ['.vue'],
+                routesFolder: 'src/pages',
+                dts: 'src/typed-router.d.ts',
+            }),
             vue(),
+            // https://github.com/JohnCampionJr/vite-plugin-vue-layouts
+            Layouts(),
             AutoImport({
                 resolvers: [VantResolver()],
+                imports: [
+                    'vue',
+                    VueRouterAutoImports,
+                    {
+                        // add any other imports you were relying on
+                        'vue-router/auto': ['useLink'],
+                    },
+                ],
             }),
             Components({
                 resolvers: [VantResolver()],
@@ -28,7 +47,7 @@ export default ({ mode }: ConfigEnv): UserConfig => {
         ],
         server: {
             host: true,
-            port: 3000,
+            // port: 3000,
             proxy: {
                 '/api': {
                     target: '',

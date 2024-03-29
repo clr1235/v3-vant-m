@@ -34,13 +34,21 @@
         "sourceMap": true,
         "allowSyntheticDefaultImports": true,
         "esModuleInterop": true,
-        "verbatimModuleSyntax": true
+        "verbatimModuleSyntax": true,
+        "types": [
+            "node",
+            "unplugin-vue-router/client",
+            "vite-plugin-vue-layouts/client",
+        ],
     },
     "include": [
         "src/**/*.ts",
         "src/**/*.tsx",
         "src/**/*.vue",
-        "*.d.ts"
+        "*.d.ts",
+        "src/components.d.ts",
+        "src/auto-imports.d.ts",
+        "src/typed-router.d.ts",
     ],
     "references": [
         {

@@ -1,9 +1,9 @@
 import { ConfigProvider } from 'vant';
 import { createApp } from 'vue';
 
-import App from './App.vue';
-
+import router from '@/router';
 import 'virtual:uno.css';
+import App from './App.vue';
 
 /* --------------------------------
 Vant 中有个别组件是以函数的形式提供的，
@@ -19,4 +19,6 @@ import 'vant/es/toast/style';
 const app = createApp(App);
 
 app.use(ConfigProvider)
+app.use(router)
+
 app.mount('#app')
