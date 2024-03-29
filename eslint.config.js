@@ -13,6 +13,7 @@ export default antfu({
     ignores: [
         '**/fixtures',
         'node_modules',
+        'pnpm-lock.yaml'
     ],
 
 }, {

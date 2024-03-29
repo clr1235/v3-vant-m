@@ -13,6 +13,8 @@ import type { ConfigEnv, UserConfig } from 'vite';
 import { loadEnv } from 'vite';
 import Layouts from 'vite-plugin-vue-layouts';
 
+import legacy from '@vitejs/plugin-legacy';
+
 export default ({ mode }: ConfigEnv): UserConfig => {
     const root = process.cwd()
     const env = loadEnv(mode, root)
@@ -44,6 +46,10 @@ export default ({ mode }: ConfigEnv): UserConfig => {
                 resolvers: [VantResolver()],
             }),
             UnoCSS(),
+            // 添加对旧版本浏览器的支持
+            legacy({
+                targets: ['defaults', 'not IE 11'],
+            }),
         ],
         server: {
             host: true,
