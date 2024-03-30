@@ -30,6 +30,7 @@ export default antfu({
     rules: {
         'style/semi': 0,
         'style/comma-dangle': 0, // 关闭语句末尾必须加逗号
+        'style/arrow-parens': 'as-needed', // 箭头函数的规范
         'import/order': 0, // 关闭导入排序
         'no-console': 1
     },
