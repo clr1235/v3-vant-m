@@ -15,6 +15,8 @@ import Layouts from 'vite-plugin-vue-layouts';
 
 import legacy from '@vitejs/plugin-legacy';
 
+// vite-plugin-compression 插件可开启gzip压缩
+
 export default ({ mode }: ConfigEnv): UserConfig => {
     const root = process.cwd()
     const env = loadEnv(mode, root)
@@ -84,6 +86,13 @@ export default ({ mode }: ConfigEnv): UserConfig => {
         build: {
             cssCodeSplit: false,
             chunkSizeWarningLimit: 2048,
+            rollupOptions: {
+                output: {
+                    chunkFileNames: "static/js/[name]-[hash].js",
+                    entryFileNames: "static/js/[name]-[hash].js",
+                    assetFileNames: "static/[ext]/[name]-[hash].[ext]"
+                }
+            }
         },
     }
 }
