@@ -51,10 +51,7 @@ class Http {
                 // 与后端协定的返回字段
                 const { code, message, result } = response.data;
                 // 判断请求是否成功
-                const isSuccess
-                    = result
-                    && Reflect.has(response.data, 'code')
-                    && code === ResultEnum.SUCCESS;
+                const isSuccess = result && Reflect.has(response.data, 'code') && code === ResultEnum.SUCCESS;
                 if (isSuccess) {
                     return result;
                 } else {
